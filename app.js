@@ -1,5 +1,5 @@
 let matricesDiv = document.getElementById('matrices');
-let resultadoDiv = document.getElementById('resultado');
+let resultadoDiv = document.getElementById('resultado').value;
 
 function crearMatrices() {
   let filas1 = parseInt(document.getElementById('filas1').value);
@@ -68,5 +68,8 @@ async function sumarMatrices() {
   
     const resultado = await response.json();
     console.log(resultado);
+    document.getElementById('resultado').innerText = JSON.stringify(resultado);
+
   }
   
+  console.log("resultadoDiv", resultadoDiv)
